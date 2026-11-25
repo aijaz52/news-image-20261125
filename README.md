@@ -4,13 +4,21 @@
 [![rank](https://make.fun/badge/news-image-20261125/aijaz52/news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 [![reward](https://make.fun/badge/news-image-20261125/aijaz52/news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
-Forty sourced reports from 25 November 2026 in one 1024x1024 image. `main.ts` copies the rendered `entry.png` byte-identically to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`); `news.html` is the page source.
+Forty sourced reports from Wednesday 25 November 2026 in one 1024×1024 news front page: a dominant date masthead, the day's summary, three key developments, and four columns of numbered reports with UTC times, sources, theme tags, headlines, and details.
+
+[`news.html`](news.html) is self-contained, with inline CSS and no external assets. Its 1,000px content area holds four 241px columns and three 12px gutters, inside 12px page margins. The fixed grid fits the masthead, all 40 reports, and the footer into 1,024px of height.
+
+`main.ts` copies the rendered [`entry.png`](entry.png) byte-identically to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`).
 
 ## Run it
+
+Rendering requires Python, Playwright, and its Chromium browser (`python3 -m pip install playwright` and `python3 -m playwright install chromium`). Node.js 22.18 or later runs the entry point directly.
 
 ```sh
 python3 render.py && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
+
+The renderer uses a 1024×1024 viewport and a device scale factor of 1. The page uses system fonts; the checked-in image was rendered with DejaVu Sans and DejaVu Sans Mono.
 
 ---
 

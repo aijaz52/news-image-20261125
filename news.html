@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=1024, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="Wednesday 25 November 2026: forty world reports in one page.">
-  <title>Wednesday 25 November 2026 | The World Brief</title>
+  <meta name="description" content="Wednesday 25 November 2026: forty world news reports, one day, one image.">
+  <title>WEDNESDAY 25 NOVEMBER 2026 — The Global Brief</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     :root {
-      --paper: #f2f0e8;
-      --ink: #182126;
-      --muted: #586267;
-      --rule: #c9c8bf;
-      --red: #aa332e;
-      --blue: #216779;
-      --green: #347052;
-      --gold: #8a651c;
-      --slate: #525d60;
-      --violet: #61507d;
+      --paper: #f4f0e6;
+      --ink: #172327;
+      --muted: #4e5b5e;
+      --rule: #c9c5b9;
+      --red: #ad302b;
+      --blue: #176779;
+      --gold: #866219;
+      --green: #32664f;
+      --violet: #66517d;
+      --slate: #49575e;
     }
     html, body {
       width: 1024px;
@@ -37,95 +37,119 @@
       height: 1024px;
       padding: 12px;
       display: grid;
-      grid-template-rows: 20px 84px 17px 42px 18px minmax(0, 1fr) 24px;
+      /* Height: 16 + 140 + 28 + 62 + 20 + 708 + 26 = 1,000px. */
+      grid-template-rows: 16px 140px 28px 62px 20px 708px 26px;
     }
     .edition {
-      min-width: 0;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       border-bottom: 1px solid var(--ink);
-      font-size: 8px;
-      font-weight: 900;
-      line-height: 13px;
-      letter-spacing: 1px;
+      font-size: 7.5px;
+      line-height: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
       white-space: nowrap;
     }
-    .edition-right { color: var(--muted); font-size: 7px; }
+    .edition span:last-child { color: var(--muted); font-size: 6.5px; }
     h1 {
+      position: relative;
       min-width: 0;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       border-bottom: 4px solid var(--ink);
-      font-family: "DejaVu Sans", Arial, sans-serif;
-      font-size: 55px;
-      line-height: 1;
+      font-size: 90px;
       font-weight: 900;
       white-space: nowrap;
     }
-    h1 .date { color: var(--red); }
-    .deck {
-      min-width: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      white-space: nowrap;
+    .weekday {
+      display: block;
+      font-size: 26px;
+      line-height: 30px;
+      letter-spacing: 6px;
+    }
+    .calendar {
+      display: block;
+      font-size: 90px;
+      line-height: 106px;
+      letter-spacing: -1px;
+    }
+    .calendar em { color: var(--red); font-style: normal; }
+    .masthead-note {
+      position: absolute;
+      top: 7px;
+      right: 0;
       font-size: 7px;
-      font-weight: 900;
+      line-height: 10px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-align: right;
     }
-    .deck span:last-child { color: var(--muted); }
     .summary {
       min-width: 0;
-      align-self: center;
-      height: 38px;
       display: flex;
       align-items: center;
-      overflow: hidden;
-      border-top: 1px solid #b7b2a4;
-      border-bottom: 1px solid #b7b2a4;
-      background: #e2decf;
+      align-self: center;
+      height: 24px;
+      border-bottom: 1px solid var(--rule);
+      background: #e6e0d1;
       white-space: nowrap;
     }
     .summary strong {
+      flex: 0 0 85px;
       height: 100%;
-      flex: 0 0 91px;
-      padding-left: 8px;
       display: flex;
       align-items: center;
+      padding-left: 7px;
       background: var(--ink);
       color: var(--paper);
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: .7px;
+      font-size: 7.7px;
+      font-weight: 800;
+      letter-spacing: .5px;
     }
     .summary p {
+      flex: 1 1 0;
       min-width: 0;
       margin: 0;
       padding: 0 8px;
-      flex: 1 1 auto;
-      overflow: hidden;
       font-size: 5.5px;
-      font-weight: 800;
-      line-height: 12px;
+      line-height: 10px;
+      font-weight: 700;
     }
+    .signals {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--ink);
+    }
+    .signal { min-width: 0; padding-left: 8px; border-left: 3px solid var(--red); }
+    .signal:nth-child(2) { border-left-color: var(--blue); }
+    .signal:nth-child(3) { border-left-color: var(--gold); }
+    .signal .label {
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-size: 6.5px;
+      line-height: 8px;
+      font-weight: 800;
+      letter-spacing: .8px;
+    }
+    .signal h2 { margin: 0 0 3px; font-size: 12px; line-height: 15px; font-weight: 900; }
+    .signal p { margin: 0; font-size: 7.3px; line-height: 9px; }
     .guide {
-      min-width: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-size: 6.5px;
+      font-weight: 800;
       white-space: nowrap;
-      font-size: 6.7px;
-      font-weight: 900;
     }
-    .guide .topics { color: var(--muted); }
+    .guide span:first-child { color: var(--muted); letter-spacing: .3px; }
     .stories {
       min-width: 0;
       min-height: 0;
       display: grid;
-      /* 1,000px content width: 4 x 241px columns plus 3 x 12px gutters. */
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      /* Width: 12px + (4 × 241px) + (3 × 12px) + 12px = 1,024px. */
+      grid-template-columns: repeat(4, 241px);
       column-gap: 12px;
     }
     .column {
@@ -133,14 +157,15 @@
       min-width: 0;
       min-height: 0;
       display: grid;
-      grid-template-rows: 24px repeat(10, minmax(0, 1fr));
+      /* Each column: a 22px section bar and ten 68.6px story cards. */
+      grid-template-rows: 22px repeat(10, minmax(0, 1fr));
     }
     .column + .column::before {
       content: "";
       position: absolute;
       top: 0;
-      bottom: 5px;
-      left: -7px;
+      bottom: 4px;
+      left: -6.5px;
       width: 1px;
       background: var(--rule);
     }
@@ -152,97 +177,98 @@
       align-items: center;
       justify-content: space-between;
       background: var(--ink);
-      color: #fffdf6;
+      color: #fffdf7;
       font-size: 8px;
-      font-weight: 900;
-      line-height: 12px;
-      letter-spacing: .6px;
+      line-height: 11px;
+      font-weight: 800;
+      letter-spacing: .5px;
       white-space: nowrap;
     }
-    .region small { font-size: 6.3px; font-weight: 600; letter-spacing: 0; }
-    .region.war, .region.ukraine { background: var(--red); }
+    .region small { font-size: 6px; font-weight: 600; letter-spacing: 0; }
+    .region.war { background: var(--red); }
     .region.markets { background: var(--blue); }
-    .region.asia, .region.eu { background: var(--gold); }
-    .region.africa { background: var(--green); }
-    .region.science { background: var(--violet); }
-    .region.americas { background: var(--slate); }
+    .region.eu { background: var(--gold); }
     .story {
       min-width: 0;
       min-height: 0;
-      padding: 3px 2px 2px;
+      padding: 6px 5px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 3px;
+      gap: 4px;
       border-bottom: 1px solid var(--rule);
-      border-left: 2px solid transparent;
+      border-left: 2px solid var(--slate);
     }
+    .story:nth-of-type(even) { background: #eee9dd; }
     .story:last-child { border-bottom: 0; }
     .story.war, .story.ukraine { border-left-color: var(--red); }
     .story.markets { border-left-color: var(--blue); }
-    .story.asia, .story.eu { border-left-color: var(--gold); }
+    .story.eu, .story.asia { border-left-color: var(--gold); }
     .story.africa { border-left-color: var(--green); }
-    .story.americas { border-left-color: var(--slate); }
+    .story.science { border-left-color: var(--violet); }
+    .story.iran { border-left-color: var(--red); }
     .meta {
       min-width: 0;
-      height: 10px;
+      height: 11px;
       display: flex;
       align-items: center;
       gap: 4px;
-      line-height: 10px;
+      line-height: 11px;
       white-space: nowrap;
     }
     .number {
       flex: 0 0 15px;
       color: var(--red);
-      font-size: 8px;
-      font-weight: 900;
+      font-size: 9px;
+      font-weight: 800;
       font-variant-numeric: tabular-nums;
     }
     time {
-      color: #465058;
       flex: 0 0 auto;
+      color: var(--muted);
       font-family: "DejaVu Sans Mono", monospace;
-      font-size: 6.2px;
+      font-size: 6.5px;
     }
     .topic {
       padding: 1px 3px;
-      color: #fff;
       background: var(--slate);
-      font-size: 5.4px;
+      color: white;
+      font-size: 5.6px;
       line-height: 7px;
-      font-weight: 900;
+      font-weight: 800;
     }
-    .topic.war, .topic.ukraine { background: var(--red); }
+    .topic.war, .topic.ukraine, .topic.iran { background: var(--red); }
     .topic.markets { background: var(--blue); }
-    .topic.asia, .topic.eu { background: var(--gold); }
+    .topic.eu, .topic.asia { background: var(--gold); }
     .topic.africa { background: var(--green); }
     .topic.science { background: var(--violet); }
     .source {
       min-width: 0;
       margin-left: auto;
-      color: #465058;
-      font-size: 5.7px;
-      font-weight: 900;
+      color: var(--muted);
+      font-size: 5.8px;
+      line-height: 9px;
+      font-weight: 800;
       text-align: right;
-      white-space: nowrap;
     }
     h3 {
       min-width: 0;
       margin: 0;
-      font-size: 8.7px;
-      line-height: 11px;
-      font-weight: 900;
+      font-size: 9.6px;
+      line-height: 13px;
+      font-weight: 800;
+      letter-spacing: -.15px;
       white-space: nowrap;
     }
     .story p {
       min-width: 0;
       margin: 0;
-      color: #465058;
-      font-size: 6.8px;
-      line-height: 9px;
+      color: var(--muted);
+      font-size: 7.1px;
+      line-height: 10px;
       white-space: nowrap;
     }
+    .lead { background: #eae0d4; }
     .lead h3 { color: var(--red); }
     footer {
       display: flex;
@@ -250,8 +276,8 @@
       justify-content: center;
       border-top: 3px solid var(--ink);
       font-size: 12px;
-      line-height: 16px;
-      font-weight: 900;
+      line-height: 17px;
+      font-weight: 800;
       white-space: nowrap;
     }
     @page { size: 1024px 1024px; margin: 0; }
@@ -259,66 +285,71 @@
 </head>
 <body>
 <main class="page" aria-label="World news for Wednesday 25 November 2026">
-  <div class="edition"><span>THE GLOBAL BRIEF</span><span class="edition-right">WORLD EDITION &nbsp; / &nbsp; WEDNESDAY &nbsp; / &nbsp; 24 HOURS</span></div>
-  <h1 aria-label="WEDNESDAY 25 NOVEMBER 2026"><span>WEDNESDAY</span><span class="date">25 NOVEMBER</span><span>2026</span></h1>
-  <div class="deck"><span>FORTY REPORTS FROM A FRACTURED, FAST-MOVING DAY</span><span>25 NOVEMBER 2026 &nbsp; / &nbsp; ALL TIMES UTC</span></div>
+  <div class="edition"><span>THE GLOBAL BRIEF</span><span>WORLD EDITION &nbsp; / &nbsp; ONE DAY, IN FOCUS &nbsp; / &nbsp; ALL TIMES UTC</span></div>
+  <h1 aria-label="WEDNESDAY 25 NOVEMBER 2026">
+    <span class="weekday">WEDNESDAY</span>
+    <span class="calendar"><em>25</em> NOVEMBER 2026</span>
+    <span class="masthead-note" aria-hidden="true">THE WORLD IN 40 DISPATCHES<br>WAR · ECONOMY · DIPLOMACY · TECHNOLOGY</span>
+  </h1>
   <section class="summary" aria-label="Day summary"><strong>DAY SUMMARY</strong><p>Russia vows retaliation as strikes gut Ukrainian power and Russian refineries; US shelves Russia business-deal peace pitch; global AI selloff resumes with Nvidia down 5% and Asia crushed; Trump tariff probe looms over 16 partners; PCE data in focus; Brent holds $90 ahead of OPEC+.</p></section>
-  <div class="guide"><span class="topics">WORLD FILES &nbsp; / &nbsp; WAR &nbsp; · &nbsp; UKRAINE &nbsp; · &nbsp; IRAN &nbsp; · &nbsp; MARKETS &nbsp; · &nbsp; EU &nbsp; · &nbsp; ASIA &nbsp; · &nbsp; AFRICA &nbsp; · &nbsp; SCIENCE &nbsp; · &nbsp; AMERICAS</span><span>40 DISPATCHES &nbsp; / &nbsp; UTC</span></div>
+  <section class="signals" aria-label="The day's defining developments">
+    <div class="signal"><p class="label">01 / WAR &amp; ENERGY</p><h2>RUSSIA VOWS RETALIATION</h2><p>Refineries −45% · Power cut in 5 Ukrainian regions</p></div>
+    <div class="signal"><p class="label">02 / MARKETS &amp; ARTIFICIAL INTELLIGENCE</p><h2>NVIDIA −5% · ASIA CRUSHED</h2><p>Nasdaq futures −2.4% · Taiex −6% · Kospi −5.9%</p></div>
+    <div class="signal"><p class="label">03 / TRADE, INFLATION &amp; OIL</p><h2>16 TARIFF TARGETS · BRENT $90</h2><p>US PCE in focus · December rate-hike odds at 97%</p></div>
+  </section>
+  <nav class="guide" aria-label="News themes"><span>WAR &nbsp; / &nbsp; UKRAINE &nbsp; / &nbsp; IRAN &nbsp; / &nbsp; MARKETS &nbsp; / &nbsp; EU &nbsp; / &nbsp; ASIA &nbsp; / &nbsp; AFRICA &nbsp; / &nbsp; SCIENCE &nbsp; / &nbsp; AMERICAS</span><span>25.11.2026 &nbsp; · &nbsp; 40 REPORTS &nbsp; · &nbsp; UTC</span></nav>
   <div class="stories">
-    <section class="column" aria-label="Stories 1 to 10, war and markets">
-      <h2 class="region war">WAR / UKRAINE <small>01—10 &nbsp; / &nbsp; 00:30–07:00</small></h2>
-      <article class="story war lead"><div class="meta"><span class="number">01</span><time datetime="2026-11-25T00:30:00Z">00:30Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Putin: retaliation is “inevitable”</h3><p>Ukrainian strikes; refinery processing down 45% since late Oct.</p></article>
-      <article class="story war"><div class="meta"><span class="number">02</span><time datetime="2026-11-25T01:15:00Z">01:15Z</time><span class="topic ukraine">UKRAINE</span><span class="source">GUARDIAN / REUTERS</span></div><h3>Russian strikes black out five regions</h3><p>Two killed in Odesa; Kyiv apartment hit.</p></article>
-      <article class="story americas"><div class="meta"><span class="number">03</span><time datetime="2026-11-25T02:00:00Z">02:00Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS / FT</span></div><h3>US shelves Russia business-deal peace pitch</h3><p>Kremlin showed little interest, FT reports.</p></article>
-      <article class="story eu"><div class="meta"><span class="number">04</span><time datetime="2026-11-25T02:20:00Z">02:20Z</time><span class="topic eu">EU</span><span class="source">REUTERS</span></div><h3>Italy rebukes Kyiv over Libya sea-drone hit</h3><p>Tajani condemns strike on Russian warship.</p></article>
-      <article class="story ukraine"><div class="meta"><span class="number">05</span><time datetime="2026-11-25T03:05:00Z">03:05Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Ukraine drones hit two Russian refineries</h3><p>Syzran, Samara hit; 145 drones downed; one killed.</p></article>
-      <article class="story eu"><div class="meta"><span class="number">06</span><time datetime="2026-11-25T04:10:00Z">04:10Z</time><span class="topic eu">EU</span><span class="source">REUTERS</span></div><h3>Merz: “Russia wants more than Ukraine”</h3><p>Defends aid as public support slips.</p></article>
-      <article class="story ukraine"><div class="meta"><span class="number">07</span><time datetime="2026-11-25T04:48:00Z">04:48Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Zelenskiy seeks $125bn in 2027 aid</h3><p>External support needs set out by president.</p></article>
-      <article class="story americas"><div class="meta"><span class="number">08</span><time datetime="2026-11-25T05:30:00Z">05:30Z</time><span class="topic">AMERICAS</span><span class="source">GUARDIAN</span></div><h3>Rutte heads to Mar-a-Lago to meet Trump</h3><p>Visit follows strikes on Ukraine energy sites.</p></article>
-      <article class="story africa"><div class="meta"><span class="number">09</span><time datetime="2026-11-25T06:15:00Z">06:15Z</time><span class="topic africa">AFRICA</span><span class="source">AP</span></div><h3>Libyan officers die after Benghazi strike</h3><p>Wounds from Ukrainian sea drone on corvette.</p></article>
-      <article class="story war"><div class="meta"><span class="number">10</span><time datetime="2026-11-25T07:00:00Z">07:00Z</time><span class="topic war">WAR</span><span class="source">AP</span></div><h3>Israeli strikes kill Gaza security chief</h3><p>Senior official killed overnight with family.</p></article>
+    <section class="column" aria-label="Stories 01 to 10: war, Ukraine and diplomacy">
+      <h2 class="region war">WAR / UKRAINE <small>01—10 &nbsp; · &nbsp; 00:30–07:00</small></h2>
+      <article class="story ukraine lead"><div class="meta"><span class="number">01</span><time datetime="2026-11-25T00:30:00Z">00:30Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Putin: retaliation is “inevitable”</h3><p>Ukraine oil strikes; processing −45% since late Oct.</p></article>
+      <article class="story ukraine"><div class="meta"><span class="number">02</span><time datetime="2026-11-25T01:15:00Z">01:15Z</time><span class="topic ukraine">UKRAINE</span><span class="source">GUARDIAN / REUTERS</span></div><h3>Strikes black out 5 Ukraine regions</h3><p>Two killed in Odesa; Kyiv apartment block hit.</p></article>
+      <article class="story americas"><div class="meta"><span class="number">03</span><time datetime="2026-11-25T02:00:00Z">02:00Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS / FT</span></div><h3>US shelves business-deal peace pitch</h3><p>Kremlin disinterest ends incentives, FT reports.</p></article>
+      <article class="story eu"><div class="meta"><span class="number">04</span><time datetime="2026-11-25T02:20:00Z">02:20Z</time><span class="topic eu">EU</span><span class="source">REUTERS</span></div><h3>Italy rebukes Kyiv over Libya strike</h3><p>FM Tajani condemns drone hit on Russian warship.</p></article>
+      <article class="story ukraine"><div class="meta"><span class="number">05</span><time datetime="2026-11-25T03:05:00Z">03:05Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Drones hit Syzran &amp; Samara refineries</h3><p>145 downed overnight; one person killed.</p></article>
+      <article class="story eu"><div class="meta"><span class="number">06</span><time datetime="2026-11-25T04:10:00Z">04:10Z</time><span class="topic eu">EU</span><span class="source">REUTERS</span></div><h3>Merz: Russia wants more than Ukraine</h3><p>Bundestag: defends aid as public support falls.</p></article>
+      <article class="story ukraine"><div class="meta"><span class="number">07</span><time datetime="2026-11-25T04:48:00Z">04:48Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Zelenskiy: $125bn needed in 2027</h3><p>Ukraine’s external support needs outlined.</p></article>
+      <article class="story americas"><div class="meta"><span class="number">08</span><time datetime="2026-11-25T05:30:00Z">05:30Z</time><span class="topic">AMERICAS</span><span class="source">GUARDIAN</span></div><h3>Rutte to meet Trump at Mar-a-Lago</h3><p>Hours after strikes on Ukraine’s energy sites.</p></article>
+      <article class="story africa"><div class="meta"><span class="number">09</span><time datetime="2026-11-25T06:15:00Z">06:15Z</time><span class="topic africa">AFRICA</span><span class="source">AP</span></div><h3>Libyan naval officers die of wounds</h3><p>Benghazi: Ukraine sea drone hit Russian corvette.</p></article>
+      <article class="story war"><div class="meta"><span class="number">10</span><time datetime="2026-11-25T07:00:00Z">07:00Z</time><span class="topic war">WAR</span><span class="source">AP</span></div><h3>Israeli strikes kill Gaza security chief</h3><p>Overnight raids persist; official killed with family.</p></article>
     </section>
-
-    <section class="column" aria-label="Stories 11 to 20, markets">
-      <h2 class="region markets">MARKETS <small>11—20 &nbsp; / &nbsp; 07:40–12:00</small></h2>
-      <article class="story markets lead"><div class="meta"><span class="number">11</span><time datetime="2026-11-25T07:40:00Z">07:40Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Stocks mixed as AI selloff returns</h3><p>Nasdaq 100 futures fall 2.4% premarket.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">12</span><time datetime="2026-11-25T08:00:00Z">08:00Z</time><span class="topic markets">MARKETS</span><span class="source">REUTERS / BLOOMBERG</span></div><h3>Nvidia drops 5% after Jensen Huang rally</h3><p>Day after +31.5%; board probes if Huang was foreign spy target.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">13</span><time datetime="2026-11-25T08:30:00Z">08:30Z</time><span class="topic markets">MARKETS</span><span class="source">REUTERS</span></div><h3>Anthropic slips below debut price</h3><p>$81.90 after last week’s blockbuster IPO.</p></article>
-      <article class="story asia"><div class="meta"><span class="number">14</span><time datetime="2026-11-25T09:10:00Z">09:10Z</time><span class="topic asia">ASIA</span><span class="source">REUTERS / DOW JONES</span></div><h3>Taiwan, Korea chips crater as AI wobbles</h3><p>Taiex −6%; Kospi −5.9%.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">15</span><time datetime="2026-11-25T09:35:00Z">09:35Z</time><span class="topic markets">MARKETS</span><span class="source">REUTERS</span></div><h3>US chip index plunges 7.9%</h3><p>SOX ~40% below June peak; worst November since 2008 looms.</p></article>
-      <article class="story americas"><div class="meta"><span class="number">16</span><time datetime="2026-11-25T10:00:00Z">10:00Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS / WSJ</span></div><h3>Trump readies tariffs for 16 partners</h3><p>China and EU in USTR capacity probe.</p></article>
-      <article class="story americas"><div class="meta"><span class="number">17</span><time datetime="2026-11-25T10:30:00Z">10:30Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>US PCE due before December Fed call</h3><p>PCE 8:30am ET; final pre-FOMC data, December hike odds 97%.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">18</span><time datetime="2026-11-25T11:05:00Z">11:05Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Brent at $90.30 before OPEC+</h3><p>Surplus fears vs Hormuz vessel attacks.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">19</span><time datetime="2026-11-25T11:30:00Z">11:30Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Gold near $3,560; Treasury yield at 4.86%</h3><p>Haven demand lifts bullion, pulls yields lower.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">20</span><time datetime="2026-11-25T12:00:00Z">12:00Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG / DJ</span></div><h3>Bitcoin stays below $60,000</h3><p>Crypto decline extends through the session.</p></article>
+    <section class="column" aria-label="Stories 11 to 20: markets, AI and energy">
+      <h2 class="region markets">MARKETS / AI <small>11—20 &nbsp; · &nbsp; 07:40–12:00</small></h2>
+      <article class="story markets lead"><div class="meta"><span class="number">11</span><time datetime="2026-11-25T07:40:00Z">07:40Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>AI selloff resumes; global stocks mixed</h3><p>Nasdaq 100 futures −2.4% in premarket trade.</p></article>
+      <article class="story science"><div class="meta"><span class="number">12</span><time datetime="2026-11-25T08:00:00Z">08:00Z</time><span class="topic science">SCIENCE / AI</span><span class="source">REUTERS / BLOOMBERG</span></div><h3>Nvidia −5% after Huang’s 31.5% rally</h3><p>Board probes if Huang was foreign spy target.</p></article>
+      <article class="story science"><div class="meta"><span class="number">13</span><time datetime="2026-11-25T08:30:00Z">08:30Z</time><span class="topic science">SCIENCE / AI</span><span class="source">REUTERS</span></div><h3>Anthropic falls below IPO price</h3><p>$81.90; blockbuster debut was last week.</p></article>
+      <article class="story asia"><div class="meta"><span class="number">14</span><time datetime="2026-11-25T09:10:00Z">09:10Z</time><span class="topic asia">ASIA</span><span class="source">REUTERS / DOW JONES</span></div><h3>Taiex −6%; Kospi −5.9% in AI rout</h3><p>Asia chipmakers crushed as AI trade falters.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">15</span><time datetime="2026-11-25T09:35:00Z">09:35Z</time><span class="topic markets">MARKETS</span><span class="source">REUTERS</span></div><h3>US semiconductor index plunges 7.9%</h3><p>~40% off June peak; worst Nov. since 2008 looms.</p></article>
+      <article class="story americas"><div class="meta"><span class="number">16</span><time datetime="2026-11-25T10:00:00Z">10:00Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS / WSJ</span></div><h3>Trump readies tariffs on 16 partners</h3><p>China, EU included after USTR capacity probe.</p></article>
+      <article class="story americas"><div class="meta"><span class="number">17</span><time datetime="2026-11-25T10:30:00Z">10:30Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>PCE due before December Fed call</h3><p>8:30am ET; final FOMC data; hike odds 97%.</p></article>
+      <article class="story iran"><div class="meta"><span class="number">18</span><time datetime="2026-11-25T11:05:00Z">11:05Z</time><span class="topic iran">IRAN / HORMUZ</span><span class="source">BLOOMBERG</span></div><h3>Brent near $90.30 ahead of OPEC+</h3><p>Surplus fears vs Hormuz vessel attacks.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">19</span><time datetime="2026-11-25T11:30:00Z">11:30Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Gold $3,560; 10-year yield 4.86%</h3><p>Haven demand lifts bullion; Treasury yields fall.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">20</span><time datetime="2026-11-25T12:00:00Z">12:00Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG / DOW JONES</span></div><h3>Bitcoin stays below $60,000</h3><p>Crypto extends its decline.</p></article>
     </section>
-
-    <section class="column" aria-label="Stories 21 to 30, Asia, Europe and the Americas">
-      <h2 class="region asia">ASIA / EU / AMERICAS <small>21—30 &nbsp; / &nbsp; 12:25–16:10</small></h2>
-      <article class="story asia"><div class="meta"><span class="number">21</span><time datetime="2026-11-25T12:25:00Z">12:25Z</time><span class="topic asia">ASIA</span><span class="source">BNN BLOOMBERG</span></div><h3>Shanghai hits one-year low; Hang Seng falls</h3><p>Shanghai Composite −2%; Hang Seng −1.1%.</p></article>
-      <article class="story asia"><div class="meta"><span class="number">22</span><time datetime="2026-11-25T13:00:00Z">13:00Z</time><span class="topic asia">ASIA</span><span class="source">DOW JONES</span></div><h3>Japan's Nikkei slides 2.9%</h3><p>Kioxia and Advantest each down more than 10%.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">23</span><time datetime="2026-11-25T13:20:00Z">13:20Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Dollar strengthens near 20-month high</h3><p>Euro −0.2% at $1.0943.</p></article>
-      <article class="story eu"><div class="meta"><span class="number">24</span><time datetime="2026-11-25T13:45:00Z">13:45Z</time><span class="topic eu">EU</span><span class="source">BNN BLOOMBERG</span></div><h3>Europe edges up as tech slide eases</h3><p>Stoxx 600 +0.3%; DAX, CAC and FTSE mixed.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">25</span><time datetime="2026-11-25T14:10:00Z">14:10Z</time><span class="topic markets">MARKETS</span><span class="source">REUTERS</span></div><h3>Dell jumps on AI server demand</h3><p>Shares +4.1% after hours; confidence at 2-year high.</p></article>
-      <article class="story americas"><div class="meta"><span class="number">26</span><time datetime="2026-11-25T14:30:00Z">14:30Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>US confidence posts near two-year high</h3><p>Best in nearly two years; November beats forecast.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">27</span><time datetime="2026-11-25T15:00:00Z">15:00Z</time><span class="topic markets">MARKETS</span><span class="source">MONEYCONTROL</span></div><h3>Equal-weight S&amp;P logs best two-day run</h3><p>Strongest breadth since April 2025.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">28</span><time datetime="2026-11-25T15:20:00Z">15:20Z</time><span class="topic markets">MARKETS</span><span class="source">MONEYCONTROL</span></div><h3>VIX near 26; Nasdaq 100 sits 16% off peak</h3><p>Growing stress; tech-heavy index remains below record.</p></article>
-      <article class="story americas"><div class="meta"><span class="number">29</span><time datetime="2026-11-25T15:45:00Z">15:45Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>Trump plans tariffs to replace struck levies</h3><p>Supreme Court struck prior levies; economies targeted one by one.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">30</span><time datetime="2026-11-25T16:10:00Z">16:10Z</time><span class="topic markets">MARKETS</span><span class="source">MONEYCONTROL</span></div><h3>Eli Lilly leads as defensive sectors gain</h3><p>+3%; health care and staples lead.</p></article>
+    <section class="column" aria-label="Stories 21 to 30: Asia, Europe and the Americas">
+      <h2 class="region eu">ASIA / EU / AMERICAS <small>21—30 &nbsp; · &nbsp; 12:25–16:10</small></h2>
+      <article class="story asia"><div class="meta"><span class="number">21</span><time datetime="2026-11-25T12:25:00Z">12:25Z</time><span class="topic asia">ASIA</span><span class="source">BNN BLOOMBERG</span></div><h3>Shanghai sinks to over one-year low</h3><p>Composite −2%; Hong Kong’s Hang Seng −1.1%.</p></article>
+      <article class="story asia"><div class="meta"><span class="number">22</span><time datetime="2026-11-25T13:00:00Z">13:00Z</time><span class="topic asia">ASIA</span><span class="source">DOW JONES</span></div><h3>Nikkei −2.9%; Japan chip stocks dive</h3><p>Kioxia and Advantest each fall more than 10%.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">23</span><time datetime="2026-11-25T13:20:00Z">13:20Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Dollar nears a 20-month high</h3><p>Euro slips 0.2% to $1.0943.</p></article>
+      <article class="story eu"><div class="meta"><span class="number">24</span><time datetime="2026-11-25T13:45:00Z">13:45Z</time><span class="topic eu">EU</span><span class="source">BNN BLOOMBERG</span></div><h3>Europe’s defensives cushion tech slide</h3><p>Stoxx 600 +0.3%; DAX, CAC 40 and FTSE mixed.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">25</span><time datetime="2026-11-25T14:10:00Z">14:10Z</time><span class="topic markets">MARKETS</span><span class="source">REUTERS</span></div><h3>Dell +4.1% on AI server demand</h3><p>After-hours gain; confidence at two-year high.</p></article>
+      <article class="story americas"><div class="meta"><span class="number">26</span><time datetime="2026-11-25T14:30:00Z">14:30Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>US consumer confidence beats forecasts</h3><p>November reading best in nearly two years.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">27</span><time datetime="2026-11-25T15:00:00Z">15:00Z</time><span class="topic markets">MARKETS</span><span class="source">MONEYCONTROL</span></div><h3>Equal-weight S&amp;P posts two-day surge</h3><p>Best since April 2025 as market breadth improves.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">28</span><time datetime="2026-11-25T15:20:00Z">15:20Z</time><span class="topic markets">MARKETS</span><span class="source">MONEYCONTROL</span></div><h3>VIX near 26 as market stress grows</h3><p>Nasdaq 100 trades 16% below its record high.</p></article>
+      <article class="story americas"><div class="meta"><span class="number">29</span><time datetime="2026-11-25T15:45:00Z">15:45Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>US pivots to economy-specific tariffs</h3><p>Trump replaces Supreme Court-struck levies.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">30</span><time datetime="2026-11-25T16:10:00Z">16:10Z</time><span class="topic markets">MARKETS</span><span class="source">MONEYCONTROL</span></div><h3>Eli Lilly +3%; defensive sectors lead</h3><p>Health care and staples lead; Lilly a top gainer.</p></article>
     </section>
-
-    <section class="column" aria-label="Stories 31 to 40, markets and world">
-      <h2 class="region markets">MARKETS / WORLD <small>31—40 &nbsp; / &nbsp; 16:35–20:30</small></h2>
-      <article class="story markets"><div class="meta"><span class="number">31</span><time datetime="2026-11-25T16:35:00Z">16:35Z</time><span class="topic markets">MARKETS</span><span class="source">MORNINGSTAR</span></div><h3>AI-linked credit spreads widen</h3><p>IG analysts flag a jump in default insurance.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">32</span><time datetime="2026-11-25T17:00:00Z">17:00Z</time><span class="topic markets">MARKETS</span><span class="source">DOW JONES</span></div><h3>Capital Economics warns of selloff risk</h3><p>AI revenue hurdle called “unrealistic.”</p></article>
-      <article class="story americas"><div class="meta"><span class="number">33</span><time datetime="2026-11-25T17:25:00Z">17:25Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>GDP and PCE land together in holiday week</h3><p>Second GDP estimate, PCE due 8:30am ET.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">34</span><time datetime="2026-11-25T17:50:00Z">17:50Z</time><span class="topic markets">MARKETS</span><span class="source">MORNINGSTAR</span></div><h3>OPEC+ supply-surplus expectations build</h3><p>Oil producers meet this weekend.</p></article>
-      <article class="story ukraine"><div class="meta"><span class="number">35</span><time datetime="2026-11-25T18:15:00Z">18:15Z</time><span class="topic ukraine">UKRAINE</span><span class="source">FT</span></div><h3>Zelenskiy diplomacy pivots from Russia deals</h3><p>Witkoff, Kushner move from corporate tie-ups.</p></article>
-      <article class="story eu"><div class="meta"><span class="number">36</span><time datetime="2026-11-25T18:40:00Z">18:40Z</time><span class="topic eu">EU</span><span class="source">REUTERS</span></div><h3>Italy's League calls Libya strike “unacceptable”</h3><p>Meloni government split over Ukraine attack.</p></article>
-      <article class="story africa"><div class="meta"><span class="number">37</span><time datetime="2026-11-25T19:05:00Z">19:05Z</time><span class="topic africa">AFRICA</span><span class="source">AP</span></div><h3>Benghazi strike opens a distant new theater</h3><p>Naval base hit thousands of miles from front.</p></article>
-      <article class="story war"><div class="meta"><span class="number">38</span><time datetime="2026-11-25T19:30:00Z">19:30Z</time><span class="topic war">WAR</span><span class="source">AP</span></div><h3>Gaza strikes kill security official and family</h3><p>Senior internal security chief, health officials say.</p></article>
-      <article class="story markets"><div class="meta"><span class="number">39</span><time datetime="2026-11-25T20:00:00Z">20:00Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Emerging markets drop 3%; global stocks slide</h3><p>MSCI All Country World heads for 8th decline in 10 sessions.</p></article>
-      <article class="story ukraine lead"><div class="meta"><span class="number">40</span><time datetime="2026-11-25T20:30:00Z">20:30Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Kyiv calls refinery strikes self-defence</h3><p>Sybiha: Putin can stop them by ending the war.</p></article>
+    <section class="column" aria-label="Stories 31 to 40: late markets, Africa and war">
+      <h2 class="region">WORLD / LATE EDITION <small>31—40 &nbsp; · &nbsp; 16:35–20:30</small></h2>
+      <article class="story markets"><div class="meta"><span class="number">31</span><time datetime="2026-11-25T16:35:00Z">16:35Z</time><span class="topic markets">MARKETS</span><span class="source">MORNINGSTAR</span></div><h3>AI-linked credit spreads widen</h3><p>IG analysts flag default-insurance jump.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">32</span><time datetime="2026-11-25T17:00:00Z">17:00Z</time><span class="topic markets">MARKETS</span><span class="source">DOW JONES</span></div><h3>Capital Economics warns of selloff</h3><p>Major equity risk; AI revenue hurdle “unrealistic.”</p></article>
+      <article class="story americas"><div class="meta"><span class="number">33</span><time datetime="2026-11-25T17:25:00Z">17:25Z</time><span class="topic">AMERICAS</span><span class="source">REUTERS</span></div><h3>Holiday week braces for GDP &amp; PCE</h3><p>Second GDP estimate and PCE: 8:30am ET.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">34</span><time datetime="2026-11-25T17:50:00Z">17:50Z</time><span class="topic markets">MARKETS</span><span class="source">MORNINGSTAR</span></div><h3>OPEC+ faces rising surplus fears</h3><p>Oil producers meet this weekend.</p></article>
+      <article class="story ukraine"><div class="meta"><span class="number">35</span><time datetime="2026-11-25T18:15:00Z">18:15Z</time><span class="topic ukraine">UKRAINE</span><span class="source">FT</span></div><h3>Peace pitch drops Russian business deals</h3><p>Zelenskiy coalition push; Witkoff, Kushner pivot.</p></article>
+      <article class="story eu"><div class="meta"><span class="number">36</span><time datetime="2026-11-25T18:40:00Z">18:40Z</time><span class="topic eu">EU</span><span class="source">REUTERS</span></div><h3>Italy’s League condemns Libya strike</h3><p>“Unacceptable”; Meloni government divided.</p></article>
+      <article class="story africa"><div class="meta"><span class="number">37</span><time datetime="2026-11-25T19:05:00Z">19:05Z</time><span class="topic africa">AFRICA</span><span class="source">AP</span></div><h3>Benghazi opens a distant war theater</h3><p>Naval base strike thousands of miles from front.</p></article>
+      <article class="story war"><div class="meta"><span class="number">38</span><time datetime="2026-11-25T19:30:00Z">19:30Z</time><span class="topic war">WAR</span><span class="source">AP</span></div><h3>Gaza strikes kill official and family</h3><p>Senior internal security official; health officials.</p></article>
+      <article class="story markets"><div class="meta"><span class="number">39</span><time datetime="2026-11-25T20:00:00Z">20:00Z</time><span class="topic markets">MARKETS</span><span class="source">BLOOMBERG</span></div><h3>Emerging markets −3%; world index falls</h3><p>MSCI All Country World: 8th drop in 10 sessions.</p></article>
+      <article class="story ukraine lead"><div class="meta"><span class="number">40</span><time datetime="2026-11-25T20:30:00Z">20:30Z</time><span class="topic ukraine">UKRAINE</span><span class="source">REUTERS</span></div><h3>Kyiv: refinery hits are self-defence</h3><p>Sybiha: Putin can end them by stopping the war.</p></article>
     </section>
   </div>
   <footer>40 stories. One day. 25 November 2026.</footer>
