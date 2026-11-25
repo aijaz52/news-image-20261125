@@ -37,8 +37,8 @@
       height: 1024px;
       padding: 12px;
       display: grid;
-      /* Height: 12 + 16 + 148 + 28 + 62 + 20 + 700 + 26 + 12 = 1,024px. */
-      grid-template-rows: 16px 148px 28px 62px 20px 700px 26px;
+      /* Height: 12 + 16 + 148 + 28 + 20 + 762 + 26 + 12 = 1,024px. */
+      grid-template-rows: 16px 148px 28px 20px 762px 26px;
     }
     .edition {
       display: flex;
@@ -115,26 +115,6 @@
       line-height: 10px;
       font-weight: 700;
     }
-    .signals {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      padding: 6px 0;
-      border-bottom: 1px solid var(--ink);
-    }
-    .signal { min-width: 0; padding-left: 8px; border-left: 3px solid var(--red); }
-    .signal:nth-child(2) { border-left-color: var(--blue); }
-    .signal:nth-child(3) { border-left-color: var(--gold); }
-    .signal .label {
-      margin: 0 0 3px;
-      color: var(--muted);
-      font-size: 6.5px;
-      line-height: 8px;
-      font-weight: 800;
-      letter-spacing: .8px;
-    }
-    .signal h2 { margin: 0 0 3px; font-size: 12px; line-height: 15px; font-weight: 900; }
-    .signal p { margin: 0; font-size: 7.3px; line-height: 9px; }
     .guide {
       display: flex;
       align-items: center;
@@ -157,7 +137,7 @@
       min-width: 0;
       min-height: 0;
       display: grid;
-      /* Each column: a 22px section bar and ten 67.8px story cards. */
+      /* Each column: a 22px section bar and ten 74px story cards. */
       grid-template-rows: 22px repeat(10, minmax(0, 1fr));
     }
     .column + .column::before {
@@ -292,11 +272,6 @@
     <span class="masthead-note" aria-hidden="true">THE WORLD IN 40 DISPATCHES<br>WAR · ECONOMY · DIPLOMACY · TECHNOLOGY</span>
   </h1>
   <section class="summary" aria-label="Day summary"><strong>DAY SUMMARY</strong><p>Russia vows retaliation as strikes gut Ukrainian power and Russian refineries; US shelves Russia business-deal peace pitch; global AI selloff resumes with Nvidia down 5% and Asia crushed; Trump tariff probe looms over 16 partners; PCE data in focus; Brent holds $90 ahead of OPEC+.</p></section>
-  <section class="signals" aria-label="The day's defining developments">
-    <div class="signal"><p class="label">01 / WAR &amp; ENERGY</p><h2>RUSSIA VOWS RETALIATION</h2><p>Refineries −45% · Power cut in 5 Ukrainian regions</p></div>
-    <div class="signal"><p class="label">02 / MARKETS &amp; ARTIFICIAL INTELLIGENCE</p><h2>NVIDIA −5% · ASIA CRUSHED</h2><p>Nasdaq futures −2.4% · Taiex −6% · Kospi −5.9%</p></div>
-    <div class="signal"><p class="label">03 / TRADE, INFLATION &amp; OIL</p><h2>16 TARIFF TARGETS · BRENT $90</h2><p>US PCE in focus · December rate-hike odds at 97%</p></div>
-  </section>
   <nav class="guide" aria-label="News themes"><span>WAR &nbsp; / &nbsp; UKRAINE &nbsp; / &nbsp; IRAN &nbsp; / &nbsp; MARKETS &nbsp; / &nbsp; EU &nbsp; / &nbsp; ASIA &nbsp; / &nbsp; AFRICA &nbsp; / &nbsp; SCIENCE &nbsp; / &nbsp; AMERICAS</span><span>25.11.2026 &nbsp; · &nbsp; 40 REPORTS &nbsp; · &nbsp; UTC</span></nav>
   <div class="stories">
     <section class="column" aria-label="Stories 01 to 10: war, Ukraine and diplomacy">

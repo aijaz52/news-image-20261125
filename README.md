@@ -6,9 +6,9 @@
 
 ![canvas: 1024 × 1024](badges/canvas.svg) ![stories: 40 · UTC](badges/stories.svg) ![assets: self-contained](badges/assets.svg)
 
-Forty reports from the supplied Wednesday 25 November 2026 brief in one 1024×1024 news front page: a dominant date masthead, the day's summary, three key developments, and four columns of numbered reports with UTC times, source tags, theme tags, headlines, and details. The editorial sequence follows the supplied brief; the first card identifies Putin's 24 November remarks as a carry-over into this edition.
+Forty reports from the supplied Wednesday 25 November 2026 brief in one 1024×1024 news front page: a dominant date masthead, a one-line day summary, and four columns of numbered reports with UTC times, source tags, theme tags, headlines, and details. The editorial sequence follows the supplied brief; the first card identifies Putin's 24 November remarks as a carry-over into this edition.
 
-[`news.html`](news.html) is self-contained, with inline CSS and no external assets. Its 1,000px content area holds four 241px columns and three 12px gutters, inside 12px page margins. The fixed grid fits the masthead, all 40 reports, and the footer into 1,024px of height.
+[`news.html`](news.html) is self-contained, with inline CSS and no external assets. Its 1,000px content area holds four 241px columns and three 12px gutters, inside 12px page margins. The fixed grid places the theme strip immediately after the summary and fits the masthead, all 40 reports, and the footer into 1,024px of height.
 
 `main.ts` copies the rendered [`entry.png`](entry.png) byte-identically to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`).
 
