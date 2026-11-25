@@ -1,8 +1,8 @@
-import { copyFileSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { copyFile, mkdir } from "node:fs/promises";
+import { join } from "node:path";
 
-const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-mkdirSync(outputDir, { recursive: true });
-const source = new URL('./entry.png', import.meta.url);
-const destination = join(outputDir, 'entry.png');
-copyFileSync(source, destination);
+const sourceImage = new URL("./entry.png", import.meta.url);
+const outputDirectory = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+
+await mkdir(outputDirectory, { recursive: true });
+await copyFile(sourceImage, join(outputDirectory, "entry.png"));
