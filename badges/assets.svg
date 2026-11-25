@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="20" role="img" aria-label="assets: self-contained">
+  <title>assets: self-contained</title>
+  <rect width="158" height="20" rx="3" fill="#32664f"/>
+  <path d="M3 0h42v20H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3" fill="#172327"/>
+  <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="10">
+    <text x="23" y="14">assets</text><text x="101" y="14">self-contained</text>
+  </g>
+</svg>
